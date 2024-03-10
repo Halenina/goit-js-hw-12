@@ -46,16 +46,16 @@ export function displayImages(images) {
 }
 
 export function displayErrorMessage(message) {
-	iziToast.error({
-		title: 'Error',
-		message: message,
-		position: 'topCenter',
-		class: 'popup-message',
-		theme: 'dark',
-		backgroundColor: '#ef4040',
-		messageColor: '#fff',
-		position: 'topRight',
-		timeout: 3000,
-		iconUrl: Error
-	});
+    iziToast.error({
+        title: 'Error',
+        message: message,
+        position: 'topCenter',
+        class: 'popup-message',
+        theme: 'dark',
+        backgroundColor: '#ef4040',
+        messageColor: '#fff',
+        position: 'topRight',
+        timeout: 3000,
+        iconUrl: Error
+    });
 }
