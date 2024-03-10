@@ -93,39 +93,39 @@ function getHeight() {
 
 
 async function searchAndDisplayImages() {
-	try {
-		const images = await searchImages(searchTerm, page);
-		const totalHits = images.totalHits;
-		const totalImage = page * 15;
-		//console.log(totalImage);
+  try {
+    const images = await searchImages(searchTerm, page);
+    const totalHits = images.totalHits;
+    const totalImage = page * 15;
+    //console.log(totalImage);
 		
-		if (images.length === 0) {
-			displayErrorMessage('Sorry, there are no images matching your search query. Please try again!');
-			return;
-		}
+    if (images.length === 0) {
+      displayErrorMessage('Sorry, there are no images matching your search query. Please try again!');
+      return;
+    }
 
-		if (totalImage >= totalHits) {
-			loadMoreBtn.style.display = 'none';
-			displayErrorMessage("We're sorry, but you've reached the end of search results.");
-			console.log(images.length);
+    if (totalImage >= totalHits) {
+      loadMoreBtn.style.display = 'none';
+      displayErrorMessage("We're sorry, but you've reached the end of search results.");
+      console.log(images.length);
 
-			return;
-		}
-		displayImages(images);
+      return;
+    }
+    displayImages(images);
 		
 		
 
-		if (images.length < 15) {
-			loadMoreBtn.style.display = 'none';
-			displayErrorMessage("We're sorry, but you've reached the end of search results.");
+    if (images.length < 15) {
+      loadMoreBtn.style.display = 'none';
+      displayErrorMessage("We're sorry, but you've reached the end of search results.");
 
-		} else {
-			loadMoreBtn.style.display = 'block';
-		}
-	} catch (error) {
-		displayErrorMessage('An error occurred while fetching data. Please try again later.');
-	} finally {
-		loadingMoreSpan.style.display = 'none';
+    } else {
+      loadMoreBtn.style.display = 'block';
+    }
+  } catch (error) {
+    displayErrorMessage('An error occurred while fetching data. Please try again later.');
+  } finally {
+    loadingMoreSpan.style.display = 'none';
 		
-	}
+  }
 }
