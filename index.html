@@ -3,30 +3,39 @@
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>goit-js-hw</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <title>Search image</title>
   
   <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-e6ae6a6a.js">
-  <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-eb6030bc.css">
-  <link rel="stylesheet" href="/goit-js-hw-12/assets/index-a98d4857.css">
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-5401a4b0.js">
+  <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-cf6910df.css">
+  <link rel="stylesheet" href="/goit-js-hw-12/assets/index-189cb200.css">
 </head>
 
 <body>
-  <form>
-    <input type="text" name="input" placeholder="Search images..." />
-    <button type="submit" name="search-btn">Search</button>
-  </form>
+  <section>
+    <form class="form">
+      <div class="form-group">
+        <input type="text" class="form-input" name="query" />
+      </div>
 
-  <ul class="gallery-container"></ul>
+      <button type="submit" class="form-submit">Search</button>
 
-  <button class="load-more-btn is-hidden" type="button" data-action="load-more">
+      <span class="loader"></span>
+    </form>
+
+    <ul id="gallery" class="gallery"></ul>
+  </section>
+  <button type="button" class="loadmore" style="display: none">
     Load more
   </button>
-
-  <div class="loader is-hidden" id="loader"></div>
-
+  <span class="loading-more" style="display: none">Loading more images...</span>
   
 </body>
 
